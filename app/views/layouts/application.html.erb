@@ -15,7 +15,8 @@
    <% if user_signed_in? %>
    <a href="/users/<%= current_user.id %>"><%= current_user.username %>のマイページ</a>
    <br>
-  <button type="button" class="btn btn-default navbar-btn">Sign out</button>
+  <button type="button" class="btn btn-default navbar-btn"><%= link_to "サインアウト", destroy_user_session_path, method: :delete %></button>
+  
   <% else %>
 <button type="button" class="btn btn-default navbar-btn">Sign in</button>
 <button type="button" class="btn btn-default navbar-btn">Register</button>
