@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
 		@products = Product.all
 	end
 
+    def show
+	    @product = Product.find(params[:id])
+	end
+
 	private
     def move_to_index
       redirect_to action: :index unless user_signed_in?
