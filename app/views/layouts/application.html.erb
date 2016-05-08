@@ -12,8 +12,16 @@
   <li role="presentation"><a href="#">Profile</a></li>
   <li role="presentation"><a href="#">Messages</a></li>
 </ul>
+   <% if user_signed_in? %>
+  <button type="button" class="btn btn-default navbar-btn">Sign out</button>
+  <% else %>
+<button type="button" class="btn btn-default navbar-btn">Sign in</button>
+<button type="button" class="btn btn-default navbar-btn">Register</button>
+
+ <% end %>
 
 <%= yield %>
+
 
 </body>
 </html>
