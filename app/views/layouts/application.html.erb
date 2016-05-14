@@ -18,8 +18,8 @@
   <button type="button" class="btn btn-default navbar-btn"><%= link_to "サインアウト", destroy_user_session_path, method: :delete %></button>
   
   <% else %>
-<button type="button" class="btn btn-default navbar-btn">Sign in</button>
-<button type="button" class="btn btn-default navbar-btn">Register</button>
+<button type="button" class="btn btn-default navbar-btn"><%= link_to "ログイン", new_user_session_path, method: :get %></button>
+<button type="button" class="btn btn-default navbar-btn"><%= link_to "新規登録", new_user_registration_path, method: :get %></button>
 
  <% end %>
 

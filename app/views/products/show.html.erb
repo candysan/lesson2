@@ -1,12 +1,11 @@
 
 <h2>商品名</h2>
   <h3>メーカー</h3>
-  <p>画像</p>
-<br>
-<br>
-  <p>---説明---</p>
-<br>
-<br>
+ 
+      <%= link_to image_tag("#{@product.image}", alt: "#{@product.product_name_ja}"), product_path(@product.id) %>
+
+        <h3><%= link_to "#{@product.product_name_ja}", product_path(@product.id) %></h3>
+        <p><%= @product.text %></p>
 <br>
 <br>
  <p>---お気に入り---口コミするボタン</p>
