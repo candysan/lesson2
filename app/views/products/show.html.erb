@@ -1,6 +1,6 @@
 
-<h2>商品名</h2>
-  <h3>メーカー</h3>
+
+<h2>カテゴリ</h2>
  
       <%= link_to image_tag("#{@product.image}", alt: "#{@product.product_name_ja}"), product_path(@product.id) %>
 
@@ -8,9 +8,15 @@
         <p><%= @product.text %></p>
 <br>
 <br>
- <p>---お気に入り---口コミするボタン</p>
 <br>
+ <a href="/products/<%= @product.id%>/reviews/new/" class="btn btn-primary" role="button">口コミを投稿する</a>
 <br>
+<p><h3>★レビューを表示★</h3></p>
+<br>
+<% @product.reviews.each do |review| %>
+<h4><%= review.username %><h4>
+<p><%= review.review %></p>
+<% end %>
 <p>---口コミ1---</p>
 <br>
 <br>
