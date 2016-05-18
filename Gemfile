@@ -51,4 +51,6 @@ end
 
   gem 'devise'
   gem 'paperclip'
+
+  gem 'acts-as-taggable-on', '~> 3.4'
   
