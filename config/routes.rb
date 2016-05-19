@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :notes
   resources :users, only: [:show, :new]
 
-  resources :products, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:index, :new, :create]
+  resources :products, only: [:index, :show, :new, :create, :category] do
+  resources :reviews, only: [:index, :new, :create]
 end
+
 end

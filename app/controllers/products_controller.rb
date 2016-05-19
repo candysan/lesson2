@@ -13,6 +13,10 @@ before_action :move_to_index, except: :index
 	  @products = Product.where('title LIKE(?), "%#{params[:keyword]}%"').limit(10)
 	end
 
+	def category
+	   @tags = Product.where(params[:category])
+	end
+
 	private
     def move_to_index
       redirect_to action: :index unless user_signed_in?
