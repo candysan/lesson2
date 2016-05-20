@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admin_users
  devise_for :users
   resources :notes
   resources :users, only: [:show, :new]
