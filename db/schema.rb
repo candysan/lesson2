@@ -11,12 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519131015) do
+ActiveRecord::Schema.define(version: 20160520125653) do
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",               limit: 255, default: "", null: false
+    t.string   "encrypted_password",  limit: 255, default: "", null: false
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",  limit: 255
+    t.string   "last_sign_in_ip",     limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",       limit: 255, default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -35,8 +50,10 @@ ActiveRecord::Schema.define(version: 20160519131015) do
     t.text     "text",            limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "product_id",      limit: 4
+    t.integer  "category_id",     limit: 4
   end
+
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.string   "username",   limit: 255

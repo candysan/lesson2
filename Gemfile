@@ -54,3 +54,5 @@ end
 
   gem 'acts-as-taggable-on', '~> 3.4'
   
+  gem 'rails_admin'
+  
